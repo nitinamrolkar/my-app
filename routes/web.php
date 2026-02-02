@@ -77,17 +77,6 @@ Route::controller(StudentController::class)->group(function()
 
 });
 
-Route::get('/test', TestController::class);
-Route::resource('second', SeconfController::class);
-
-Route::controller(TeachersController::class)->group(function()
-{
-        Route::get('teachers', 'index');
-        Route::get('add-teachers', 'add');
-        Route::get('show-teachers/{id}', 'show');
-        Route::get('update-teachers/{id}', 'update');
-        Route::get('delete-teachers/{id}', 'delete');
-});
 
 
 Route::fallback(function(){

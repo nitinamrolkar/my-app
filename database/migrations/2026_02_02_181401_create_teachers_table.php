@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
+            $table->date('date_of_birth')->nullable();
+            $table->enum('gender', ['m', 'f'])->default('m');
+            $table->unsignedTinyInteger('age')->nullable();
             $table->timestamps();
         });
     }
