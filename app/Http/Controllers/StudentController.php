@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Student;
 use Illuminate\Container\Attributes\DB;
 use Illuminate\Http\Request;
 use PhpParser\Lexer\TokenEmulator\ReadonlyFunctionTokenEmulator;
@@ -35,5 +35,35 @@ class StudentController extends Controller
     
         
     // }
+
+
+    //  public function deleteData($id)
+    // {
+    //     // $getUsers = User::all();
+    //     $StudentDelete = Student::findOrFail($id);
+    //     $StudentDelete->delete();
+    //     return "Data deleted successfully";
+    // }
+
+    public function getData()
+    {
+        //$items = Student::all();
+        // $items = Student::withTrashed()->get();
+        $items = Student::withTrashed()->find(1)->restore();
+        return $items;
+    }
+
+    public function onlyTrashed()
+    {
+       //$items = Student::onlyTrashed()->get(); 
+       $items = Student::onlyTrashed()->get();
+       return response()->json($items);
+    }
+
+    public function deleteData()
+    {
+        Student::find(1)->forceDelete();
+        return 'Deleted Successfully';
+    }
 
 }

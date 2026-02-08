@@ -79,12 +79,21 @@ Route::controller(StudentController::class)->group(function()
 
 Route::controller(UserController::class)->group(function()
 {
-        Route::get('add-student', 'addData');
-        Route::get('show-student', 'getData');
-        Route::get('update-student', 'updateData');
-        Route::get('delete-student/{id}', 'deleteData');
+       
         Route::get('users', 'whereConfditions');
         Route::get('whereusers', 'whereBetween');
+        Route::get('not-whereusers', 'notWhereBetween');
+        Route::get('where-in', 'whereIn');
+        Route::get('scope-male', 'scopeMale');
+});
+
+Route::controller(StudentController::class)->group(function()
+{
+    Route::get('delete-student', 'deleteData' );
+    Route::get('students', 'getData');
+    Route::get('del-students', 'onlyTrashed');
+
+
 });
 
 
