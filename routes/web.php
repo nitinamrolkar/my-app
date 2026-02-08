@@ -77,6 +77,17 @@ Route::controller(StudentController::class)->group(function()
 
 });
 
+Route::controller(UserController::class)->group(function()
+{
+        Route::get('add-student', 'addData');
+        Route::get('show-student', 'getData');
+        Route::get('update-student', 'updateData');
+        Route::get('delete-student/{id}', 'deleteData');
+        Route::get('users', 'whereConfditions');
+        Route::get('whereusers', 'whereBetween');
+});
+
+
 
 
 Route::fallback(function(){

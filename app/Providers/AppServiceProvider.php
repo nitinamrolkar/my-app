@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,6 +22,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
        Route::pattern('id', '[0-9]+');
+
+       if (env('DB_CONNECTION') === 'sqlite') 
+        {
+        DB::statement('PRAGMA foreign_keys = ON');
+        }
     }
 
 
