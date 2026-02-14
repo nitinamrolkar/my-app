@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simple Template with Sidebar</title>
   
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
 <style>
+
+  
     /* General Styles */
     * {
       margin: 0;
@@ -44,6 +47,19 @@
       padding-top: 20px;
       position: fixed;
     }
+
+    .search{
+      padding: 5px;
+      width: 900px;
+      height: 30px;
+      margin-top: 5px;
+      
+    }
+    h2{
+      text-align: center;
+      color: #931b1b;
+    }
+
 
     .sidebar ul {
       list-style: none;
@@ -126,8 +142,8 @@
   <div class="sidebar">
     <ul>
       <li><a href="#">Dashboard</a></li>
-      <li><a href="#">Profile</a></li>
-      <li><a href="#">Settings</a></li>
+      <li><a href="{{URL('student')}}">Students</a></li>
+       <li><a href="{{URL('teacher')}}">Teachers</a></li>
       <li><a href="#">Messages</a></li>
       <li><a href="#">Logout</a></li>
     </ul>
@@ -144,7 +160,7 @@
     <!-- Navigation Bar -->
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="{{URL('student')}}">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Services</a></li>
         <li><a href="#">Contact</a></li>
@@ -166,5 +182,7 @@
   </div>
 
 </body>
+
+<script src="resources/js/bootstrap.min.js"></script>
     @yield('scripts')
 </html>

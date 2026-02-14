@@ -9,9 +9,9 @@ use App\Models\Teachers;
 use Illuminate\Routing\RouteRegistrar;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::get('/about-us', function(){
 //     return "This is ABout Page";
@@ -70,13 +70,6 @@ Route::get('/', function () {
 //  Route::get('students', [StudentController::class, 'index']);
 // Route::get('about-us', [StudentController::class, 'aboutus']);
 
-Route::controller(StudentController::class)->group(function()
-{
-    Route::get('students', 'index');
-    Route::get('about-us', 'aboutus');
-
-});
-
 Route::controller(UserController::class)->group(function()
 {
        
@@ -87,13 +80,20 @@ Route::controller(UserController::class)->group(function()
         Route::get('scope-male', 'scopeMale');
 });
 
-Route::controller(StudentController::class)->group(function()
+Route::prefix('student')->controller(StudentController::class)->group(function()
 {
-    Route::get('delete-student', 'deleteData' );
-    Route::get('students', 'getData');
-    Route::get('del-students', 'onlyTrashed');
+    Route::get('/', 'index');
+    Route::view('add-student', 'students.add');
+    Route::post('create', 'addStudents');
+    Route::get('edit/{id}', 'editStudent');
+    Route::post('update/{id}', 'updateStudent');
+    Route::post('delete/{id}', 'deletetudent');
+});
 
-
+Route::prefix('teacher')->controller(TeachersController::class)->group(function(){
+    Route::get('/', 'index');
+    Route::get('edit/{id}', 'editTeacher');
+    Route::post('update/{id}', 'updateTeacher');
 });
 
 
