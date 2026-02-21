@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Student;
+use App\Models\Teacher;
 use App\Models\User;
 
 use Illuminate\Http\Request;
@@ -9,6 +10,20 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
+
+    public function index()
+    {
+        // $allUsers = User::all();
+        //$allUsers = User::with('student', 'teacher')->get();
+         $allTeachers = Teacher::with('user')->get();
+        return $allTeachers;
+    }
+
+     public function user_students()
+    {
+        $allStudents = User::with('student')->where('user_type', 'student')->get();
+        return $allStudents;
+    }
 
   
     // public function addData()

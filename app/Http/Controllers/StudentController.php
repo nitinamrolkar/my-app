@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use App\Models\User;
 use Illuminate\Container\Attributes\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use PhpParser\Lexer\TokenEmulator\ReadonlyFunctionTokenEmulator;
 
@@ -51,7 +52,13 @@ public function addStudents(Request $request)
         'date_of_birth' => 'required|date',
         'gender' => 'required|in:m,f',
         'score' => 'required|integer|min:45|max:100',
+        'image' => 'required|nullable|image:png,jpg,gif|max:2048'
     ]);
+
+        $ImagePath = null;
+        if($request->hasFile('image')){
+            $ImagePath = $request->file('image')->store('photos', 'public');
+        }
         $User = new User();
         $User->name = $request->name;
         $User->email = $request->email;
@@ -65,6 +72,7 @@ public function addStudents(Request $request)
         $Student->age = $request->age;
         $Student->gender = $request->gender;
         $Student->score = $request->score;
+        $Student->image = $ImagePath;
         $Student->user_id = $User->id;
         $Student->save();
 
@@ -103,10 +111,21 @@ public function updateStudent(Request $request, $id)
 
 public function deletetudent($id)
 {
-       $item = User::findOrFail($id)->delete();
-        return redirect('student');
-}
+    $student = Student::where('user_id', $id)->first();
 
+    if ($student) {
+
+        if ($student->image) {
+            Storage::disk('public')->delete($student->image);
+        }
+
+        $student->delete();
+    }
+
+    User::findOrFail($id)->delete();
+
+    return redirect('student');
+}
     // protected $name;
     // protected $age;
 

@@ -70,14 +70,10 @@ use Illuminate\Support\Facades\Route;
 //  Route::get('students', [StudentController::class, 'index']);
 // Route::get('about-us', [StudentController::class, 'aboutus']);
 
-Route::controller(UserController::class)->group(function()
-{
-       
-        Route::get('users', 'whereConfditions');
-        Route::get('whereusers', 'whereBetween');
-        Route::get('not-whereusers', 'notWhereBetween');
-        Route::get('where-in', 'whereIn');
-        Route::get('scope-male', 'scopeMale');
+Route::prefix('users')->controller(UserController::class)->group(function(){
+    Route::get('/', 'index');
+    Route::get('user-student', 'user_students');
+
 });
 
 Route::prefix('student')->controller(StudentController::class)->group(function()
@@ -94,6 +90,8 @@ Route::prefix('teacher')->controller(TeachersController::class)->group(function(
     Route::get('/', 'index');
     Route::get('edit/{id}', 'editTeacher');
     Route::post('update/{id}', 'updateTeacher');
+    Route::get('all-classes', 'techers_classes');
+    
 });
 
 

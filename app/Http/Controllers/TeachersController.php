@@ -52,6 +52,12 @@ class TeachersController extends Controller
 
     }
 
+    public function techers_classes()
+    {
+        $allClasses = Teacher::with('classes')->get();
+        return $allClasses;
+    }
+
    
 
    
