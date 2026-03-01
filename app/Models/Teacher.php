@@ -18,4 +18,10 @@ class Teacher extends Model
     {
         return $this->hasMany(Classes::class);
     }
+
+     public function students()
+    {
+        return $this->hasManyThrough(Student::class, Classes::class, 'teacher_id', 'class_id');
+    }
+
 }

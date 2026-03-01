@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Classes;
+use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -58,6 +60,12 @@ class TeachersController extends Controller
         return $allClasses;
     }
 
+    public function get_students()
+    {
+        return Teacher::with('students')->get();
+    }
+
+   
    
 
    

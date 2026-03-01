@@ -1,12 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Classes;
 use App\Models\Student;
+use App\Models\Teacher;
 use App\Models\User;
 use Illuminate\Container\Attributes\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use PhpParser\Lexer\TokenEmulator\ReadonlyFunctionTokenEmulator;
+use Illuminate\Database\Eloquent\Model;
 
 use function Termwind\renderUsing;
 
@@ -132,6 +136,13 @@ public function deletetudent($id)
         $items = Student::with('classes')->get();
         return $items;
     }
+
+    public function student_teacher()
+    {
+        return Student::with('teacher')->get();
+    }
+
+ 
     // protected $name;
     // protected $age;
 

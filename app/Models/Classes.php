@@ -21,4 +21,9 @@ class Classes extends Model
     {
         return $this->belongsToMany(Subject::class, 'class_subjects', 'class_id', 'subject_id');
     }
+
+      public function grades()
+    {
+        return $this->belongsToMany(Subject::class, 'grades', 'student_id', 'subject_id')->withPivot('grade')->withTimestamps();
+    }
 }

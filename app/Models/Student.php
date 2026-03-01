@@ -21,4 +21,17 @@ class Student extends Model
     {
         return $this->belongsTo(Classes::class, 'class_id');
     }
+
+       public function teacher()
+    {
+        return $this->hasOneThrough(
+            Teacher::class,
+            Classes::class,
+            'id',
+            'id',
+            'class_id',
+            'teacher_id'
+        );
+    }
+
 }
