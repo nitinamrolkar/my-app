@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\SeconfController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeachersController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
@@ -84,6 +86,7 @@ Route::prefix('student')->controller(StudentController::class)->group(function()
     Route::get('edit/{id}', 'editStudent');
     Route::post('update/{id}', 'updateStudent');
     Route::post('delete/{id}', 'deletetudent');
+    Route::get('student-classes', 's_with_classes');
 });
 
 Route::prefix('teacher')->controller(TeachersController::class)->group(function(){
@@ -92,6 +95,18 @@ Route::prefix('teacher')->controller(TeachersController::class)->group(function(
     Route::post('update/{id}', 'updateTeacher');
     Route::get('all-classes', 'techers_classes');
     
+});
+
+Route::prefix('classes')->controller(ClassesController::class)->group(function()
+{
+    Route::get('/', 'index');
+    Route::get('sclass', 'student_classes');
+});
+
+Route::prefix('subject')->controller(SubjectController::class)->group(function()
+{
+         Route::get('/', 'index');
+
 });
 
 

@@ -126,6 +126,12 @@ public function deletetudent($id)
 
     return redirect('student');
 }
+
+    public function s_with_classes()
+    {
+        $items = Student::with('classes')->get();
+        return $items;
+    }
     // protected $name;
     // protected $age;
 
