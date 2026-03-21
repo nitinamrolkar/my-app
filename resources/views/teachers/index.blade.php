@@ -1,14 +1,4 @@
-@extends('layouts.app')
-
-@section('style')
-
-@endsection
-
-@section('maincontent')
-
-@endsection
-
-@section('content')
+<x-app-layout>
   <section>
     <div>
         <h2>Teachers</h2>
@@ -77,8 +67,4 @@
 
       
   </section>
-@endsection
-
-@section('scripts')
-
-@endsection
+</x-app-layout>

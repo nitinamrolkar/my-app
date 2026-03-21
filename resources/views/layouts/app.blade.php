@@ -134,7 +134,7 @@
     }
   </style>
 
-  @yield('style')
+ 
 </head>
 <body>
 
@@ -167,11 +167,11 @@
       </ul>
     </nav>
 
-    @yield('maincontent')
+
 
     <!-- Main Content -->
     <div class="content">
-    @yield('content')
+             {{ $slot }} 
       
     </div>
 
@@ -184,5 +184,5 @@
 </body>
 
 <script src="resources/js/bootstrap.min.js"></script>
-    @yield('scripts')
+  
 </html>

@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class ImagesController extends Controller
 {
-    //
+    
+
+    
 }

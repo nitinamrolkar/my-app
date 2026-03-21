@@ -34,4 +34,9 @@ class Student extends Model
         );
     }
 
+    public function images(){
+     
+        return $this->morphMany(Images::class, 'imageable'); 
+    }
+
 }

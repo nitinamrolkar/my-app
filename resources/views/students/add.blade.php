@@ -1,14 +1,4 @@
-@extends('layouts.app')
-
-@section('style')
-
-@endsection
-
-@section('maincontent')
-
-@endsection
-
-@section('content')
+<x-app-layout>
 <div class="card-header bg-primary text-white text-center fs-1">
     <h3 class="mb-2 mt-2">Student registration</h3>
 
@@ -62,8 +52,4 @@
 
 </div>
 
-@endsection
-
-@section('scripts')
-
-@endsection
+</x-app-layout>

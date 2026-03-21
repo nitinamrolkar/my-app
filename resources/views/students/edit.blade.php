@@ -1,14 +1,4 @@
-@extends('layouts.app')
-
-@section('style')
-
-@endsection
-
-@section('maincontent')
-
-@endsection
-
-@section('content')
+<x-app-layout>
 <div class="container-fluid p-2 bg-primary text-white text-center">
   <h4>Edit Students</h4>
   {{$student->name}}
@@ -61,8 +51,4 @@
   </div>
 </div>
 </form>
-@endsection
-
-@section('scripts')
-
-@endsection
+</x-app-layout>

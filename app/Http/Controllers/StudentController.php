@@ -6,11 +6,13 @@ use App\Models\Classes;
 use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\User;
+use App\Models\Images;
 use Illuminate\Container\Attributes\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use PhpParser\Lexer\TokenEmulator\ReadonlyFunctionTokenEmulator;
 use Illuminate\Database\Eloquent\Model;
+use Nette\Utils\Image;
 
 use function Termwind\renderUsing;
 
@@ -20,7 +22,7 @@ class StudentController extends Controller
    public function index(Request $request)
 {
 
-   $students = Student::with('user')
+   $students = Student::with('user', 'images')
     ->when($request->search, function($query, $search) {
         $query->whereHas('user', function ($q) use ($search) {
             $q->where('name', 'like', "%{$search}%")
@@ -66,19 +68,34 @@ public function addStudents(Request $request)
         $User = new User();
         $User->name = $request->name;
         $User->email = $request->email;
+        $User->user_type = 'student';
         $User->password = bcrypt('password');
 
         $User->save();
 
 
-        $Student = new Student();
-        $Student->date_of_birth = $request->date_of_birth;
-        $Student->age = $request->age;
-        $Student->gender = $request->gender;
-        $Student->score = $request->score;
-        $Student->image = $ImagePath;
-        $Student->user_id = $User->id;
-        $Student->save();
+        if($User->save()){
+            $Student = new Student();
+            $Student->name = $request->name;
+            $Student->email = $request->email;
+            $Student->date_of_birth = $request->date_of_birth;
+            $Student->age = $request->age;
+            $Student->gender = $request->gender;
+            $Student->score = $request->score;
+            $Student->image = $ImagePath;
+            $Student->user_id = $User->id;
+            $Student->save();
+
+            $images = new Images();
+            $images->path =  $ImagePath;
+            $images->imageable_id = $Student->id;
+            $images->imageable_type = $Student::class;
+            $images->save();
+
+        }
+
+      
+
 
         return redirect('student');
 
@@ -141,6 +158,8 @@ public function deletetudent($id)
     {
         return Student::with('teacher')->get();
     }
+
+  
 
  
     // protected $name;

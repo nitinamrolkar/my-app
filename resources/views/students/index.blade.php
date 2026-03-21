@@ -1,14 +1,6 @@
-@extends('layouts.app')
 
-@section('style')
-
-@endsection
-
-@section('maincontent')
-
-@endsection
-
-@section('content')
+<x-app-layout>
+   
   <section>
     <div>
 
@@ -24,7 +16,7 @@
                 </ul>
             </div>
         @endif
-    <form action={{URL('students')}} method="get">
+    <form action={{URL('student')}} method="get">
     <div>
         <input class="search" type="text" id="search" name="search" placeholder="Secrch"|>
       <button type="submit" class="btn btn-outline-success btn-sm">Success</button>
@@ -53,8 +45,11 @@
                     <tr>
                         <td>{{$student->id}}</td>
                          <td>
-                            @if($student->image)
-                                <img style="width: 60px", height="40px" src="{{ asset('storage/'.$student->image)}}"
+                        
+
+                            @if(count($student->images) > 0)
+                                 <img style="width: 60px", height="40px" src="{{ asset('storage/'.$student->images->first()->path) }}" >
+
                             @endif
                         </td>
                         <td>{{$student->User->name}}</td>
@@ -90,8 +85,13 @@
 
       
   </section>
-@endsection
+</x-app-layout>
 
-@section('scripts')
 
-@endsection
+
+
+
+
+
+
+

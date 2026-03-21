@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Images extends Model
 {
-    public function imageble()
-    {
-        return $this->morphTo();
+   public function imageable(){
+        return $this->morphTo();  // standard polymorphic
     }
 }
