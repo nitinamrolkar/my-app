@@ -3,7 +3,7 @@
   <!--begin::Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Admin | Dashboard</title>
+    <title>AdminLTE v4 | Dashboard</title>
 
     <!--begin::Accessibility Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
@@ -28,15 +28,13 @@
     <!--begin::Accessibility Features-->
     <!-- Skip links will be dynamically added by accessibility.js -->
     <meta name="supported-color-schemes" content="light dark" />
-
-    <link rel="preload" href="{{ asset('dist/css/adminlte.css') }}" as="style">
-
+    <link rel="preload" href="./css/adminlte.css" as="style" />
     <!--end::Accessibility Features-->
 
     <!--begin::Fonts-->
     <link
       rel="stylesheet"
-      href="{{asset('dist/css/index.css')}}"
+      href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
       integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q="
       crossorigin="anonymous"
       media="print"
@@ -47,7 +45,7 @@
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
     <link
       rel="stylesheet"
-      href="{{asset('dist/css/overlayscrollbars.min.css')}}"
+      href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/styles/overlayscrollbars.min.css"
       crossorigin="anonymous"
     />
     <!--end::Third Party Plugin(OverlayScrollbars)-->
@@ -55,22 +53,19 @@
     <!--begin::Third Party Plugin(Bootstrap Icons)-->
     <link
       rel="stylesheet"
-      href="{{asset('dist/css/bootstrap-icons.min.css')}}"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
       crossorigin="anonymous"
     />
     <!--end::Third Party Plugin(Bootstrap Icons)-->
 
     <!--begin::Required Plugin(AdminLTE)-->
-    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.css') }}" />
-
-
-    
+    <link rel="stylesheet" href="./css/adminlte.css" />
     <!--end::Required Plugin(AdminLTE)-->
 
     <!-- apexcharts -->
     <link
       rel="stylesheet"
-      href="{{asset('dist/css/apexcharts.css')}}"
+      href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
       integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0="
       crossorigin="anonymous"
     />
@@ -78,7 +73,7 @@
     <!-- jsvectormap -->
     <link
       rel="stylesheet"
-      href="{{asset('dist/css/jsvectormap.min.css')}}"
+      href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
       integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4="
       crossorigin="anonymous"
     />
@@ -130,9 +125,7 @@
                   <div class="d-flex">
                     <div class="flex-shrink-0">
                       <img
-                        src="{{ asset('dist/assets/img/user1-128x128.jpg') }}"
-
-                  
+                        src="./assets/img/user1-128x128.jpg"
                         alt="User Avatar"
                         class="img-size-50 rounded-circle me-3"
                       />
@@ -158,7 +151,7 @@
                   <div class="d-flex">
                     <div class="flex-shrink-0">
                       <img
-                        src="{{asset('dist/assets/img/user8-128x128.jpg')}}"
+                        src="./assets/img/user8-128x128.jpg"
                         alt="User Avatar"
                         class="img-size-50 rounded-circle me-3"
                       />
@@ -184,8 +177,7 @@
                   <div class="d-flex">
                     <div class="flex-shrink-0">
                       <img
-                      
-                        src="{{ asset('dist/assets/img/user3-128x128.jpg') }}"
+                        src="./assets/img/user3-128x128.jpg"
                         alt="User Avatar"
                         class="img-size-50 rounded-circle me-3"
                       />
@@ -253,7 +245,7 @@
             <li class="nav-item dropdown user-menu">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 <img
-                  src="{{ asset('dist/assets/img/user2-160x160.jpg') }}"
+                  src="./assets/img/user2-160x160.jpg"
                   class="user-image rounded-circle shadow"
                   alt="User Image"
                 />
@@ -263,7 +255,7 @@
                 <!--begin::User Image-->
                 <li class="user-header text-bg-primary">
                   <img
-                    src="{{ asset('dist/assets/img/user2-160x160.jpg') }}"
+                    src="./assets/img/user2-160x160.jpg"
                     class="rounded-circle shadow"
                     alt="User Image"
                   />
@@ -293,15 +285,7 @@
                 <!--begin::Menu Footer-->
                 <li class="user-footer">
                   <a href="#" class="btn btn-outline-secondary">Profile</a>
-                
-                  <a href="#" class="btn btn-outline-danger float-end"
-   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-   Sign out
-</a>
-
-<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-    @csrf
-</form>
+                  <a href="#" class="btn btn-outline-danger float-end">Sign out</a>
                 </li>
                 <!--end::Menu Footer-->
               </ul>
@@ -318,10 +302,10 @@
         <!--begin::Sidebar Brand-->
         <div class="sidebar-brand">
           <!--begin::Brand Link-->
-          <a href="{{ asset('dist/index.html') }}" class="brand-link">
+          <a href="./index.html" class="brand-link">
             <!--begin::Brand Image-->
             <img
-              src="{{ asset('dist/assets/img/AdminLTELogo.png') }}"
+              src="./assets/img/AdminLTELogo.png"
               alt="AdminLTE Logo"
               class="brand-image opacity-75 shadow"
             />
@@ -355,19 +339,19 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{ asset('dist/index.html') }}" class="nav-link active">
+                    <a href="./index.html" class="nav-link active">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Dashboard v1</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ asset('dist/index2.html') }}" class="nav-link">
+                    <a href="./index2.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Dashboard v2</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ asset('dist/index3.html') }}" class="nav-link">
+                    <a href="./index3.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Dashboard v3</p>
                     </a>
@@ -375,7 +359,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="{{ asset('dist/generate/theme.html') }}" class="nav-link">
+                <a href="./generate/theme.html" class="nav-link">
                   <i class="nav-icon bi bi-palette"></i>
                   <p>Theme Generate</p>
                 </a>
@@ -390,19 +374,19 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{ asset('dist/widgets/small-box.html') }}" class="nav-link">
+                    <a href="./widgets/small-box.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Small Box</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ asset('dist/widgets/info-box.html') }}" class="nav-link">
+                    <a href="./widgets/info-box.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>info Box</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ asset('dist/widgets/cards.html') }}" class="nav-link">
+                    <a href="./widgets/cards.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Cards</p>
                     </a>
@@ -420,61 +404,61 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{ asset('dist/layout/unfixed-sidebar.html') }}" class="nav-link">
+                    <a href="./layout/unfixed-sidebar.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Default Sidebar</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ asset('dist/layout/fixed-sidebar.html') }}" class="nav-link">
+                    <a href="./layout/fixed-sidebar.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Fixed Sidebar</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ asset('dist/layout/fixed-header.html') }}" class="nav-link">
+                    <a href="./layout/fixed-header.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Fixed Header</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ asset('dist/layout/fixed-footer.html') }}" class="nav-link">
+                    <a href="./layout/fixed-footer.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Fixed Footer</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ asset('dist/layout/fixed-complete.html') }}" class="nav-link">
+                    <a href="./layout/fixed-complete.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Fixed Complete</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ asset('dist/layout/fixed-complete.html') }}" class="nav-link">
+                    <a href="./layout/layout-custom-area.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Layout <small>+ Custom Area </small></p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ asset('dist/layout/sidebar-mini.html') }}" class="nav-link">
+                    <a href="./layout/sidebar-mini.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Sidebar Mini</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ asset('dist/layout/collapsed-sidebar.html') }}" class="nav-link">
+                    <a href="./layout/collapsed-sidebar.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Sidebar Mini <small>+ Collapsed</small></p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ asset('dist/layout/logo-switch.html') }}" class="nav-link">
+                    <a href="./layout/logo-switch.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Sidebar Mini <small>+ Logo Switch</small></p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ asset('dist/layout/layout-rtl.html') }}" class="nav-link">
+                    <a href="./layout/layout-rtl.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Layout RTL</p>
                     </a>
@@ -491,19 +475,19 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{ asset('dist/UI/general.html') }}" class="nav-link">
+                    <a href="./UI/general.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>General</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ asset('dist/UI/icons.html') }}" class="nav-link">
+                    <a href="./UI/icons.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Icons</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{asset('dist/UI/timeline.html')}}" class="nav-link">
+                    <a href="./UI/timeline.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Timeline</p>
                     </a>
@@ -520,7 +504,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{asset('dist/forms/general.html')}}" class="nav-link">
+                    <a href="./forms/general.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>General Elements</p>
                     </a>
@@ -537,7 +521,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{asset('dist/tables/simple.html')}}" class="nav-link">
+                    <a href="./tables/simple.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Simple Tables</p>
                     </a>
@@ -565,13 +549,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                       <li class="nav-item">
-                        <a href="{{asset('dist/examples/login.html')}}" class="nav-link">
+                        <a href="./examples/login.html" class="nav-link">
                           <i class="nav-icon bi bi-circle"></i>
                           <p>Login</p>
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a href="{{asset('dist/examples/register.html')}}" class="nav-link">
+                        <a href="./examples/register.html" class="nav-link">
                           <i class="nav-icon bi bi-circle"></i>
                           <p>Register</p>
                         </a>
@@ -588,13 +572,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                       <li class="nav-item">
-                        <a href="{{asset('dist/examples/login-v2.html')}}" class="nav-link">
+                        <a href="./examples/login-v2.html" class="nav-link">
                           <i class="nav-icon bi bi-circle"></i>
                           <p>Login</p>
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a href="{{asset('dist/examples/register-v2.html')}}" class="nav-link">
+                        <a href="./examples/register-v2.html" class="nav-link">
                           <i class="nav-icon bi bi-circle"></i>
                           <p>Register</p>
                         </a>
@@ -602,7 +586,7 @@
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a href="{{asset('dist/examples/lockscreen.html')}}" class="nav-link">
+                    <a href="./examples/lockscreen.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Lockscreen</p>
                     </a>
@@ -612,19 +596,19 @@
 
               <li class="nav-header">DOCUMENTATIONS</li>
               <li class="nav-item">
-                <a href="{{asset('dist/docs/introduction.html')}}" class="nav-link">
+                <a href="./docs/introduction.html" class="nav-link">
                   <i class="nav-icon bi bi-download"></i>
                   <p>Installation</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('dist/docs/layout.html')}}" class="nav-link">
+                <a href="./docs/layout.html" class="nav-link">
                   <i class="nav-icon bi bi-grip-horizontal"></i>
                   <p>Layout</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('dist/docs/color-mode.html')}}" class="nav-link">
+                <a href="./docs/color-mode.html" class="nav-link">
                   <i class="nav-icon bi bi-star-half"></i>
                   <p>Color Mode</p>
                 </a>
@@ -639,13 +623,13 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{asset('dist/docs/components/main-header.html')}}" class="nav-link">
+                    <a href="./docs/components/main-header.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Main Header</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{asset('dist/docs/components/main-sidebar.html')}}" class="nav-link">
+                    <a href="./docs/components/main-sidebar.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Main Sidebar</p>
                     </a>
@@ -662,33 +646,33 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{asset('/docs/javascript/treeview.html')}}" class="nav-link">
-                      <i class="nav-idistcon bi bi-circle"></i>
+                    <a href="./docs/javascript/treeview.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
                       <p>Treeview</p>
                     </a>
                   </li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="{{asset('dist/docs/browser-support.html')}}" class="nav-link">
+                <a href="./docs/browser-support.html" class="nav-link">
                   <i class="nav-icon bi bi-browser-edge"></i>
                   <p>Browser Support</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('dist/docs/how-to-contribute.html')}}" class="nav-link">
+                <a href="./docs/how-to-contribute.html" class="nav-link">
                   <i class="nav-icon bi bi-hand-thumbs-up-fill"></i>
                   <p>How To Contribute</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('dist/docs/faq.html')}}" class="nav-link">
+                <a href="./docs/faq.html" class="nav-link">
                   <i class="nav-icon bi bi-question-circle-fill"></i>
                   <p>FAQ</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('dist/docs/license.html')}}" class="nav-link">
+                <a href="./docs/license.html" class="nav-link">
                   <i class="nav-icon bi bi-patch-check-fill"></i>
                   <p>License</p>
                 </a>
@@ -825,7 +809,11 @@
                     <p>New Orders</p>
                   </div>
                   <svg
-                 
+                    class="small-box-icon"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
                   >
                     <path
                       d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z"
@@ -849,8 +837,13 @@
 
                     <p>Bounce Rate</p>
                   </div>
-                
-                 
+                  <svg
+                    class="small-box-icon"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
                     <path
                       d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75zM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 01-1.875-1.875V8.625zM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 013 19.875v-6.75z"
                     ></path>
@@ -877,7 +870,7 @@
                     class="small-box-icon"
                     fill="currentColor"
                     viewBox="0 0 24 24"
-                
+                    xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
                     <path
@@ -906,6 +899,7 @@
                     class="small-box-icon"
                     fill="currentColor"
                     viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
                     <path
@@ -983,7 +977,7 @@
                         <!-- /.direct-chat-infos -->
                         <img
                           class="direct-chat-img"
-                          src="{{asset('dist/assets/img/user1-128x128.jpg')}}"
+                          src="./assets/img/user1-128x128.jpg"
                           alt="message user image"
                         />
                         <!-- /.direct-chat-img -->
@@ -1003,7 +997,7 @@
                         <!-- /.direct-chat-infos -->
                         <img
                           class="direct-chat-img"
-                          src="{{asset('dist/assets/img/user3-128x128.jpg')}}"
+                          src="./assets/img/user3-128x128.jpg"
                           alt="message user image"
                         />
                         <!-- /.direct-chat-img -->
@@ -1021,7 +1015,7 @@
                         <!-- /.direct-chat-infos -->
                         <img
                           class="direct-chat-img"
-                          src="{{asset('dist/assets/img/user1-128x128.jpg')}}"
+                          src="./assets/img/user1-128x128.jpg"
                           alt="message user image"
                         />
                         <!-- /.direct-chat-img -->
@@ -1041,7 +1035,7 @@
                         <!-- /.direct-chat-infos -->
                         <img
                           class="direct-chat-img"
-                          src="{{asset('dist/assets/img/user3-128x128.jpg')}}"
+                          src="./assets/img/user3-128x128.jpg"
                           alt="message user image"
                         />
                         <!-- /.direct-chat-img -->
@@ -1059,7 +1053,7 @@
                           <a href="#">
                             <img
                               class="contacts-list-img"
-                              src="{{asset('dist/assets/img/user1-128x128.jpg')}}"
+                              src="./assets/img/user1-128x128.jpg"
                               alt="User Avatar"
                             />
 
@@ -1078,7 +1072,7 @@
                           <a href="#">
                             <img
                               class="contacts-list-img"
-                              src="{{asset('dist/assets/img/user7-128x128.jpg')}}"
+                              src="./assets/img/user7-128x128.jpg"
                               alt="User Avatar"
                             />
 
@@ -1097,7 +1091,7 @@
                           <a href="#">
                             <img
                               class="contacts-list-img"
-                              src="{{asset('dist/assets/img/user3-128x128.jpg')}}"
+                              src="./assets/img/user3-128x128.jpg"
                               alt="User Avatar"
                             />
 
@@ -1116,7 +1110,7 @@
                           <a href="#">
                             <img
                               class="contacts-list-img"
-                              src="{{asset('dist/assets/img/user5-128x128.jpg')}}"
+                              src="./assets/img/user5-128x128.jpg"
                               alt="User Avatar"
                             />
 
@@ -1135,7 +1129,7 @@
                           <a href="#">
                             <img
                               class="contacts-list-img"
-                              src="{{asset('dist/assets/img/user6-128x128.jpg')}}"
+                              src="./assets/img/user6-128x128.jpg"
                               alt="User Avatar"
                             />
 
@@ -1154,7 +1148,7 @@
                           <a href="#">
                             <img
                               class="contacts-list-img"
-                              src="{{asset('dist/assets/img/user8-128x128.jpg')}}"
+                              src="./assets/img/user8-128x128.jpg"
                               alt="User Avatar"
                             />
 
@@ -1250,9 +1244,12 @@
         <div class="float-end d-none d-sm-inline">Anything you want</div>
         <!--end::To the end-->
         <!--begin::Copyright-->
-        <strong
-  
-       
+        <strong>
+          Copyright &copy; 2014-2026&nbsp;
+          <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
+        </strong>
+        All rights reserved.
+        <!--end::Copyright-->
       </footer>
       <!--end::Footer-->
     </div>
@@ -1260,21 +1257,21 @@
     <!--begin::Script-->
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
     <script
-      src="{{asset('dist/js/overlayscrollbars.browser.es6.min.js')}}"
+      src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js"
       crossorigin="anonymous"
     ></script>
     <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
     <script
-      src="{{asset('dist/js/popper.min.js')}}"
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       crossorigin="anonymous"
     ></script>
     <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
     <script
-      src="{{asset('dist/js/bootstrap.min.js')}}"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
       crossorigin="anonymous"
     ></script>
     <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
-    <script src="{{asset('dist/js/adminlte.js')}}"></script>
+    <script src="./js/adminlte.js"></script>
     <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
     <script>
       const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
@@ -1310,7 +1307,7 @@
 
     <!-- sortablejs -->
     <script
-      src="{{asset('dist/js/Sortable.min.js')}}"
+      src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"
       crossorigin="anonymous"
     ></script>
 
@@ -1329,7 +1326,7 @@
 
     <!-- apexcharts -->
     <script
-      src="{{asset('dist/js/apexcharts.min.js')}}"
+      src="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.min.js"
       integrity="sha256-+vh8GkaU7C9/wbSLIcwq82tQ2wTf44aOHA8HlBMwRI8="
       crossorigin="anonymous"
     ></script>
@@ -1396,12 +1393,12 @@
 
     <!-- jsvectormap -->
     <script
-      src="{{asset('dist/js/jsvectormap.min.js')}}"
+      src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js"
       integrity="sha256-/t1nN2956BT869E6H4V1dnt0X5pAQHPytli+1nTZm2Y="
       crossorigin="anonymous"
     ></script>
     <script
-      src="{{asset('dist/js/world.js')}}"
+      src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/maps/world.js"
       integrity="sha256-XPpPaZlU8S/HWf7FZLAncLg2SAkP8ScUTII89x9D3lY="
       crossorigin="anonymous"
     ></script>
